@@ -1,1 +1,1 @@
-# Case-T-cnico
+# Case-Tecnico
