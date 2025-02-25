@@ -124,8 +124,48 @@ Os dados extraídos foram armazenados e modelados no **BigQuery**, partindo da t
 - Os dados foram organizados em **duas tabelas**:
   1. **cryptocurrency** - Armazena os identificadores e metadados das criptomoedas.
   2. **market_data** - Contém os valores financeiros das moedas.
+
 - Embora o BigQuery não seja um banco de dados relacional tradicional (como MySQL ou PostgreSQL), ele é altamente otimizado para grandes volumes de dados.
 - Ele suporta consultas SQL padrão e permite trabalhar tanto com dados estruturados quanto semi-estruturados (JSON, CSV, Parquet, etc.).
+
+
+### Criação da view:
+
+Essa view crypto_market_view tem como objetivo extrair e transformar dados de duas tabelas (cryptocurrency e market_data) e criar uma visão consolidada sobre as criptomoedas, com informações adicionais e transformações para facilitar a análise.
+
+Principais pontos:
+
+1. **Transformação de Dados Numéricos**
+
+priceUsd: O preço da criptomoeda em dólares, arredondado para 8 casas decimais usando a função ROUND().
+marketCapUsd: A capitalização de mercado da criptomoeda em dólares, arredondada para 2 casas decimais.
+volumeUsd24Hr: O volume negociado nas últimas 24 horas da criptomoeda, arredondado para 2 casas decimais.
+supply: O número total de unidades da criptomoeda em circulação.
+maxSupply: O número máximo de unidades da criptomoeda que podem existir (se NULL, é substituído por 0 utilizando a função COALESCE()). 
+
+2. **Extração de Data e Hora**
+
+year: O ano da data fornecida (2025-02-25 13:46:40 UTC) extraído usando a função EXTRACT() para obter apenas o ano.
+month: O mês da mesma data extraído com EXTRACT() para obter apenas o mês.
+day: O dia da mesma data extraído com EXTRACT() para obter apenas o dia.
+time_formatted: A hora extraída da data fornecida, formatada no estilo HH:MM:SS usando a função FORMAT_TIMESTAMP(). Isso facilita a visualização do horário específico da criptomoeda.
+
+3. **lassificação da Criptomoeda**
+
+market_cap_category: Uma nova coluna criada com base na capitalização de mercado (marketCapUsd), utilizando uma expressão CASE para categorizar as criptomoedas em:
+Mega Cap: Para capitalizações acima de 100 bilhões de dólares.
+Large Cap: Para capitalizações entre 10 bilhões e 100 bilhões de dólares.
+Mid Cap: Para capitalizações entre 1 bilhão e 10 bilhões de dólares.
+Small Cap: Para capitalizações entre 100 milhões e 1 bilhão de dólares.
+Micro Cap: Para capitalizações abaixo de 100 milhões de dólares.
+
+4. **Join entre Tabelas**
+
+A view realiza um JOIN entre a tabela cryptocurrency (representada por c) e a tabela market_data (representada por m) usando o campo id como chave de junção. Isso significa que os dados de ambas as tabelas são combinados para formar um único conjunto de informações sobre cada criptomoeda.
+
+
+
+
 
 ### **Looker Studio - Dashboard Dinâmico**
 O **Looker Studio** permite configurar dashboards dinâmicos e gráficos em tempo real conectados diretamente ao BigQuery. Os dados são apresentados de forma clara e interativa, facilitando a análise de tendências de mercado.
@@ -148,7 +188,7 @@ Para ajudar na organização do desenvolvimento do projeto, utilizei a aba Issue
 
 🚀 **Projeto completo, automatizado e pronto para análise de criptomoedas!**
 
-### Tentei reproduzir ao máximo o que foi feito no GCP e estou aberto a sugestões de melhorias para aprimorar ainda mais o projeto. Espero que essa documentação e estrutura sejam úteis para quem deseja entender este processo e aplicá-lo no dia a dia. Qualquer feedback ou recomendação será muito bem-vindo! 🚀
+**Tentei reproduzir ao máximo o que foi feito no GCP e estou aberto a sugestões de melhorias para aprimorar ainda mais o projeto. Espero que essa documentação e estrutura sejam úteis para quem deseja entender este processo e aplicá-lo no dia a dia. Qualquer feedback ou recomendação será muito bem-vindo! 🚀**
 
 
 

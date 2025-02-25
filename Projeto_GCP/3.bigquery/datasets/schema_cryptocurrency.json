@@ -1,0 +1,30 @@
+[
+    {
+      "name": "id",
+      "mode": "",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "name",
+      "mode": "",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "symbol",
+      "mode": "",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "rank",
+      "mode": "",
+      "type": "INTEGER",
+      "description": "",
+      "fields": []
+    }
+  ]

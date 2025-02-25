@@ -1,0 +1,51 @@
+[
+    {
+      "name": "id",
+      "mode": "",
+      "type": "STRING",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "priceUsd",
+      "mode": "",
+      "type": "FLOAT",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "marketCapUsd",
+      "mode": "",
+      "type": "FLOAT",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "volumeUsd24Hr",
+      "mode": "",
+      "type": "FLOAT",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "supply",
+      "mode": "",
+      "type": "FLOAT",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "maxSupply",
+      "mode": "",
+      "type": "FLOAT",
+      "description": "",
+      "fields": []
+    },
+    {
+      "name": "timestamp",
+      "mode": "",
+      "type": "TIMESTAMP",
+      "description": "",
+      "fields": []
+    }
+  ]
