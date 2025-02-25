@@ -85,7 +85,7 @@ Projeto_GCP/
 │   ├── config.yaml       # Configurações opcionais da Cloud Run
 │
 │── schedule/             # Configuração do Cloud Scheduler
-│   ├── schedule_config.txt  # Arquivo com a configuração do agendamento
+│   ├── schedule_config.png  # Arquivo com a configuração do agendamento
 │   ├── instructions.md      # Instruções sobre o agendamento
 │
 │── bigquery/             # Scripts SQL para o BigQuery
