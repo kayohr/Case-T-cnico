@@ -1,0 +1,84 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: request-api
+  namespace: '8623044835'
+  selfLink: /apis/serving.knative.dev/v1/namespaces/8623044835/services/request-api
+  uid: 7b17feaf-3b3e-4655-a6bb-5a89e4b9f0ea
+  resourceVersion: AAYu94g7Ef4
+  generation: 32
+  creationTimestamp: '2025-02-24T18:50:22.434217Z'
+  labels:
+    cloud.googleapis.com/location: us-central1
+  annotations:
+    serving.knative.dev/creator: seuemail@email.com
+    serving.knative.dev/lastModifier: seuemail@email.com
+    run.googleapis.com/build-base-image: gcr.io/serverless-runtimes/google-22/runtimes/python311
+    run.googleapis.com/build-enable-automatic-updates: 'true'
+    run.googleapis.com/client-name: cloud-console
+    run.googleapis.com/build-function-target: etl
+    run.googleapis.com/build-name: projects/8623044835/locations/us-central1/builds/9ef41b17-4ccf-44ae-984b-9c9cf4ab4c23
+    run.googleapis.com/build-source-location: gs://run-sources-lustrous-spirit-451917-p2-us-central1/services/request-api/1740490475.989000.zip#1740490476999482
+    run.googleapis.com/build-image-uri: us-central1-docker.pkg.dev/lustrous-spirit-451917-p2/cloud-run-source-deploy/request-api
+    run.googleapis.com/operation-id: a8e88729-e0fd-4780-8483-eacdae424713
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+    run.googleapis.com/urls: '["https://request-api-8623044835.us-central1.run.app","https://request-api-3dfpparzgq-uc.a.run.app"]'
+spec:
+  template:
+    metadata:
+      labels:
+        run.googleapis.com/startupProbeType: Default
+      annotations:
+        autoscaling.knative.dev/maxScale: '100'
+        run.googleapis.com/client-name: cloud-console
+        run.googleapis.com/startup-cpu-boost: 'true'
+        run.googleapis.com/base-images: '{"request-api-1":"gcr.io/serverless-runtimes/google-22/runtimes/python311"}'
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: 8623044835-compute@developer.gserviceaccount.com
+      containers:
+      - name: request-api-1
+        image: us-central1-docker.pkg.dev/lustrous-spirit-451917-p2/cloud-run-source-deploy/request-api@sha256:fae34944b59c47fcfa97348c03565497b3ea67d7a945bea3934082f454d772c5
+        ports:
+        - name: http1
+          containerPort: 8080
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+        startupProbe:
+          timeoutSeconds: 240
+          periodSeconds: 240
+          failureThreshold: 1
+          tcpSocket:
+            port: 8080
+      runtimeClassName: run.googleapis.com/linux-base-image-update
+  traffic:
+  - percent: 100
+    latestRevision: true
+status:
+  observedGeneration: 32
+  conditions:
+  - type: Ready
+    status: 'True'
+    lastTransitionTime: '2025-02-25T13:35:37.636350Z'
+  - type: BaseImageValidated
+    status: 'True'
+    severity: Info
+  - type: ConfigurationsReady
+    status: 'True'
+    lastTransitionTime: '2025-02-25T13:35:36.387079Z'
+  - type: RoutesReady
+    status: 'True'
+    lastTransitionTime: '2025-02-25T13:35:37.603049Z'
+  latestReadyRevisionName: request-api-00032-75g
+  latestCreatedRevisionName: request-api-00032-75g
+  traffic:
+  - revisionName: request-api-00032-75g
+    percent: 100
+    latestRevision: true
+  url: https://request-api-3dfpparzgq-uc.a.run.app
+  address:
+    url: https://request-api-3dfpparzgq-uc.a.run.app
