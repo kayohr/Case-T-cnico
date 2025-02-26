@@ -44,7 +44,7 @@ Para depuração e análise dos dados, siga os passos abaixo no console do **Goo
 
 ### 🔍 Dashboard no Looker Studio
 Os dados processados podem ser visualizados no seguinte dashboard do Looker Studio:
-[🔗 Link para o Dashboard](https://lookerstudio.google.com/reporting/cde78a73-ee72-4db3-b096-733dce43271f/page/k2rzE)
+[🔗 Link para o Dashboard](https://lookerstudio.google.com/reporting/a6958d7d-4adf-45e3-bb92-6dcb877c6c47/page/nMD0E)
 
 #### 📊 Métricas Disponíveis
 No dashboard, você encontrará diversas métricas relacionadas ao mercado de criptomoedas, incluindo:
@@ -67,7 +67,7 @@ No dashboard, você encontrará diversas métricas relacionadas ao mercado de cr
 
 Essas métricas são atualizadas automaticamente conforme os dados são processados no BigQuery.
 Os dados processados podem ser visualizados no seguinte dashboard do Looker Studio:
-[🔗 Link para o Dashboard](https://lookerstudio.google.com/reporting/cde78a73-ee72-4db3-b096-733dce43271f/page/k2rzE)
+[🔗 Link para o Dashboard](https://lookerstudio.google.com/reporting/a6958d7d-4adf-45e3-bb92-6dcb877c6c47/page/nMD0E)
 
 
 ---
@@ -177,7 +177,7 @@ O dashboard exibe informações em tempo real, incluindo:
 - **Ranking das 10 Maiores Criptomoedas**
 - **Distribuição de Volume por Moeda**
 
-📊 **Acesse o dashboard em:** [🔗 Looker Studio](https://lookerstudio.google.com/reporting/cde78a73-ee72-4db3-b096-733dce43271f/page/k2rzE)
+📊 **Acesse o dashboard em:** [🔗 Looker Studio](https://lookerstudio.google.com/reporting/a6958d7d-4adf-45e3-bb92-6dcb877c6c47/page/nMD0E)
 
 ### Acompanhamento e Organização
 
