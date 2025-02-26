@@ -7,7 +7,6 @@ Este projeto foi configurado diretamente pelo **Google Cloud Console**. Abaixo e
 
 1. **Cloud Run**: Implementação do serviço `request-api` através do console.
    - Base image: Python 3.11 (Ubuntu 22)
-   - Endpoint: [https://request-api-8623044835.us-central1.run.app/](https://request-api-8623044835.us-central1.run.app/) (Onde irá conseguir ver a requisição da API)
 
 2. **Cloud Scheduler**: Agendamento de execução do serviço.
    - Frequência: `0 * * * *` (hora em hora)
